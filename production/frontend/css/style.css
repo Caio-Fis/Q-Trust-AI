@@ -98,6 +98,13 @@ nav {
 .status-pill.off  .status-dot { background: var(--danger); }
 @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(90,209,155,.5)} 70%{box-shadow:0 0 0 8px rgba(90,209,155,0)} 100%{box-shadow:0 0 0 0 rgba(90,209,155,0)} }
 
+.userAccount { display: flex; align-items: center; gap: 16px; }
+.lang-switch { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; letter-spacing: .5px; }
+.lang-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,.55); font: inherit; padding: 2px; transition: color 120ms; }
+.lang-btn:hover { color: var(--foreground); }
+.lang-btn.active { color: var(--secondary); }
+.lang-sep { color: rgba(255,255,255,.3); }
+
 /* ------------------------------------------------------------------ Shell --- */
 /* Fundo navy opaco: rola por cima do hero fixo, cobrindo-o */
 .main-container { position: relative; z-index: 2; background: var(--background); }

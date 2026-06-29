@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q-Trust AI | Detecção Quântica de Imagens Sintéticas</title>
-    <meta name="description"
+    <meta name="description" id="meta-description"
         content="Q-Trust AI — Arquitetura híbrida clássico-quântica que detecta imagens geradas por IA. Anexe uma imagem e receba o diagnóstico: REAL ou SINTÉTICA.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +22,11 @@
         <div class="hero-content">
             <div class="subtitle">
                 <span class="start-dash"></span>
-                <span class="subtitle-text font-roboto">DETECÇÃO QUÂNTICA DE IMAGENS</span>
+                <span class="subtitle-text font-roboto" data-i18n="hero.subtitle">DETECÇÃO QUÂNTICA DE IMAGENS</span>
             </div>
-            <h1>Esta imagem é real ou foi gerada por uma IA?</h1>
+            <h1 data-i18n="hero.h1">Esta imagem é real ou foi gerada por uma IA?</h1>
             <a class="cta" href="#detector">
-                <span>ANALISAR UMA IMAGEM</span>
+                <span data-i18n="hero.cta">ANALISAR UMA IMAGEM</span>
                 <img src="./assets/icons/down-arrow.svg" alt="">
             </a>
         </div>
@@ -37,8 +37,13 @@
     <nav>
         <div class="logo">Q&middot;TRUST<span class="logo-ai">AI</span></div>
         <div class="userAccount">
+            <div class="lang-switch" id="lang-switch" aria-label="Idioma / Language">
+                <button type="button" class="lang-btn" data-lang="pt">PT</button>
+                <span class="lang-sep">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
             <span class="status-pill" id="status-pill" title="Status do modelo">
-                <span class="status-dot"></span><span class="status-text">verificando…</span>
+                <span class="status-dot"></span><span class="status-text" data-i18n="status.checking">verificando…</span>
             </span>
         </div>
     </nav>
@@ -52,9 +57,9 @@
             <div class="section-head">
                 <div class="subtitle">
                     <span class="start-dash"></span>
-                    <span class="subtitle-text font-roboto">O DETECTOR</span>
+                    <span class="subtitle-text font-roboto" data-i18n="detector.subtitle">O DETECTOR</span>
                 </div>
-                <h2>Anexe uma imagem e receba o diagnóstico</h2>
+                <h2 data-i18n="detector.h2">Anexe uma imagem e receba o diagnóstico</h2>
             </div>
 
             <div class="detector-grid">
@@ -65,17 +70,17 @@
                             <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp" hidden>
                             <div class="dropzone-empty" id="dropzone-empty">
                                 <div class="dropzone-icon">⚛</div>
-                                <p class="dropzone-title">Arraste uma imagem aqui</p>
-                                <p class="dropzone-hint font-roboto">ou clique para selecionar &middot; JPG, PNG ou WEBP &middot; até 10&nbsp;MB</p>
+                                <p class="dropzone-title" data-i18n="dropzone.title">Arraste uma imagem aqui</p>
+                                <p class="dropzone-hint font-roboto" data-i18n="dropzone.hint">ou clique para selecionar · JPG, PNG ou WEBP · até 10 MB</p>
                             </div>
                             <img id="preview" class="preview" alt="pré-visualização" hidden>
                         </label>
                         <div class="actions">
                             <button type="submit" id="analyze-btn" class="cta cta-solid" disabled>
-                                <span>DIAGNOSTICAR</span>
+                                <span data-i18n="btn.analyze">DIAGNOSTICAR</span>
                             </button>
                             <button type="button" id="reset-btn" class="cta cta-ghost" hidden>
-                                <span>LIMPAR</span>
+                                <span data-i18n="btn.reset">LIMPAR</span>
                             </button>
                         </div>
                     </form>
@@ -85,12 +90,12 @@
                 <div class="result-card" id="result-card">
                     <div class="result-placeholder" id="result-placeholder">
                         <span class="start-dash"></span>
-                        <p class="font-roboto">O diagnóstico aparecerá aqui após a análise.</p>
+                        <p class="font-roboto" data-i18n="result.placeholder">O diagnóstico aparecerá aqui após a análise.</p>
                     </div>
 
                     <div class="result-loading" id="result-loading" hidden>
                         <div class="spinner"></div>
-                        <p class="font-roboto">Executando circuito quântico…</p>
+                        <p class="font-roboto" data-i18n="result.loading">Executando circuito quântico…</p>
                     </div>
 
                     <div class="result-content" id="result-content" hidden>
@@ -100,7 +105,7 @@
                         </div>
                         <div class="gauge">
                             <div class="gauge-row font-roboto">
-                                <span>Probabilidade de ser SINTÉTICA</span>
+                                <span data-i18n="gauge.label">Probabilidade de ser SINTÉTICA</span>
                                 <span id="pfake-value">0%</span>
                             </div>
                             <div class="gauge-bar"><div class="gauge-fill" id="gauge-fill"></div></div>
@@ -121,25 +126,25 @@
             <div class="section-head">
                 <div class="subtitle">
                     <span class="start-dash"></span>
-                    <span class="subtitle-text font-roboto">COMO FUNCIONA</span>
+                    <span class="subtitle-text font-roboto" data-i18n="how.subtitle">COMO FUNCIONA</span>
                 </div>
-                <h2>Três fontes de sinal, um veredito quântico</h2>
+                <h2 data-i18n="how.h2">Três fontes de sinal, um veredito quântico</h2>
             </div>
             <div class="cards">
                 <article class="card">
                     <div class="card-no">01</div>
-                    <h3>Features visuais</h3>
-                    <p class="font-roboto">Uma ResNet18 (ImageNet, com fine-tuning parcial) extrai um embedding semântico de 512 dimensões, comprimido para 6 ângulos de rotação.</p>
+                    <h3 data-i18n="card1.h3">Features visuais</h3>
+                    <p class="font-roboto" data-i18n="card1.p">Uma ResNet18 (ImageNet, com fine-tuning parcial) extrai um embedding semântico de 512 dimensões, comprimido para 6 ângulos de rotação.</p>
                 </article>
                 <article class="card">
                     <div class="card-no">02</div>
-                    <h3>Assinatura espectral</h3>
-                    <p class="font-roboto">A FFT 2D revela o espectro radial de potência — artefatos de frequência que GANs e modelos de difusão deixam ao gerar imagens.</p>
+                    <h3 data-i18n="card2.h3">Assinatura espectral</h3>
+                    <p class="font-roboto" data-i18n="card2.p">A FFT 2D revela o espectro radial de potência — artefatos de frequência que GANs e modelos de difusão deixam ao gerar imagens.</p>
                 </article>
                 <article class="card">
                     <div class="card-no">03</div>
-                    <h3>Circuito quântico</h3>
-                    <p class="font-roboto">Um VQC de 6 qubits com data re-uploading codifica o visual em RY e o espectral em RZ (eixos ortogonais), entrelaça com um anel de CNOTs e mede ⟨Z⟩.</p>
+                    <h3 data-i18n="card3.h3">Circuito quântico</h3>
+                    <p class="font-roboto" data-i18n="card3.p">Um VQC de 6 qubits com data re-uploading codifica o visual em RY e o espectral em RZ (eixos ortogonais), entrelaça com um anel de CNOTs e mede ⟨Z⟩.</p>
                 </article>
             </div>
         </section>
@@ -148,26 +153,26 @@
     <footer id="sobre">
         <div class="footer-info">
             <div class="logo font-roboto">Q&middot;TRUST AI</div>
-            <p class="font-roboto">Arquitetura híbrida clássico-quântica para detecção de imagens sintéticas. Brazil Quantum Camp.</p>
-            <span class="copyright">© 2026 Q-Trust AI · Uso educacional e de pesquisa</span>
+            <p class="font-roboto" data-i18n="footer.tagline">Arquitetura híbrida clássico-quântica para detecção de imagens sintéticas. Brazil Quantum Camp.</p>
+            <span class="copyright" data-i18n="footer.copyright">© 2026 Q-Trust AI · Uso educacional e de pesquisa</span>
         </div>
         <div class="footer-navlinks">
             <div>
-                <div class="footer-navlinks-header">Projeto</div>
+                <div class="footer-navlinks-header" data-i18n="footer.project">Projeto</div>
                 <ul class="font-roboto">
                     <li>VQC Dual-Input · 6 qubits</li>
-                    <li>4 camadas de Re-Uploading</li>
+                    <li data-i18n="footer.proj.layers">4 camadas de Re-Uploading</li>
                     <li>Benchmark CIFAKE</li>
                     <li>Recall 96%</li>
-                    <li><a href="https://github.com/Caio-Fis/Q-Trust-AI" target="_blank" rel="noopener">Código no GitHub ↗</a></li>
+                    <li><a href="https://github.com/Caio-Fis/Q-Trust-AI" target="_blank" rel="noopener" data-i18n="footer.proj.code">Código no GitHub ↗</a></li>
                 </ul>
             </div>
             <div>
-                <div class="footer-navlinks-header">Aviso</div>
+                <div class="footer-navlinks-header" data-i18n="footer.notice">Aviso</div>
                 <ul class="font-roboto">
-                    <li>Resultado probabilístico</li>
-                    <li>Não é prova definitiva</li>
-                    <li>Treinado em Stable Diffusion 1.4</li>
+                    <li data-i18n="footer.notice.1">Resultado probabilístico</li>
+                    <li data-i18n="footer.notice.2">Não é prova definitiva</li>
+                    <li data-i18n="footer.notice.3">Treinado em Stable Diffusion 1.4</li>
                 </ul>
             </div>
         </div>
