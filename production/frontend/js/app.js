@@ -108,8 +108,8 @@
 
   let lang = (() => {
     const saved = localStorage.getItem("qtrust-lang");
-    if (saved === "pt" || saved === "en") return saved;
-    return (navigator.language || "").toLowerCase().startsWith("pt") ? "pt" : "en";
+    // Padrão: PT (mantém a escolha do usuário se já tiver trocado de idioma).
+    return saved === "pt" || saved === "en" ? saved : "pt";
   })();
   const t = (key) => (I18N[lang] && I18N[lang][key]) || I18N.pt[key] || key;
 
