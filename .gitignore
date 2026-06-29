@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data & Models (too large for git — use Kaggle/HuggingFace)
+data/
+datasets/
+*.pt
+*.pth
+*.pkl
+*.h5
+
+# Logs & outputs
+logs/
+runs/
+wandb/
+*.log
+
+# Media / screen recordings (too large, not needed in repo)
+*.mp4
+*.mov
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

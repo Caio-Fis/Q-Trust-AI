@@ -1,0 +1,6 @@
+# Não enviar para o HF Space
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store

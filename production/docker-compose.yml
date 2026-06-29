@@ -1,0 +1,13 @@
+services:
+  qtrust:
+    build: .
+    image: qtrust-ai:latest
+    container_name: qtrust-ai
+    ports:
+      - "8000:8000"
+    # Monta o modelo de fora: troque o .pt sem rebuildar a imagem.
+    volumes:
+      - ./models:/app/models:ro
+    environment:
+      - QTRUST_MODEL_PATH=/app/models/qtrust_vqc.pt
+    restart: unless-stopped

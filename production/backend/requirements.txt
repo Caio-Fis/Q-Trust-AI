@@ -1,0 +1,11 @@
+# Q-Trust AI — runtime de produção (Python 3.11 recomendado)
+# torch/pennylane NÃO têm wheels para Python 3.14; use 3.11 (Docker já fixa isso).
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pillow==11.1.0
+numpy==1.26.4
+torch==2.3.1
+torchvision==0.18.1
+pennylane==0.36.0
+autoray<0.8.0  # NumpyMimic foi removido no autoray 0.8.0 e quebra o pennylane 0.36
