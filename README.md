@@ -7,7 +7,12 @@
   <img src="https://img.shields.io/badge/PennyLane-0.36+-black?style=for-the-badge&logo=data:image/svg+xml;base64,&logoColor=white"/>
   <img src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
   <img src="https://img.shields.io/badge/Quantum-6%20Qubits-8A2BE2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Synthetic%20Recall-96%25-success?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Accuracy-90.75%25-brightgreen?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  <a href="https://caio-fis-q-trust-ai.hf.space"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20Live%20Demo-caio--fis--q--trust--ai.hf.space-2496ED?style=for-the-badge"/></a>
 </p>
 
 <p align="center">
@@ -23,7 +28,11 @@ As AI-generated imagery becomes indistinguishable from real photographs, the nee
 
 Our key insight: generative models like GANs and Diffusion Models leave measurable **spectral fingerprints** - patterns invisible to the human eye but detectable in the frequency domain. By combining these spectral features with ResNet18 semantic embeddings inside a **Variational Quantum Circuit (VQC)**, we exploit quantum entanglement to capture subtle cross-modal correlations.
 
-> **Result:** 90.75% accuracy and F1-Score of 0.9125 on the CIFAKE benchmark - operating in only **6 dimensions** with **72 trainable quantum parameters**, near-matching a classical SVM with 528 dimensions.
+Because this is a **detection** task, the metric that matters most is **recall on the synthetic class** - how many fake images we actually catch. A missed fake (false negative) is the costly error, so recall is our headline number.
+
+> **Headline result — Synthetic Recall: 96%** on the CIFAKE benchmark: the model flags almost every AI-generated image, with only ~4% of fakes slipping through. Achieved with **90.75% overall accuracy** and an **F1-Score of 0.9125**, operating in only **6 dimensions** with **72 trainable quantum parameters** - near-matching a classical SVM with 528 dimensions.
+
+> 🌐 **Try it live:** [caio-fis-q-trust-ai.hf.space](https://caio-fis-q-trust-ai.hf.space)
 
 ---
 
@@ -80,10 +89,12 @@ Input Image (32×32×3)
 
 > **The VQC with 6D input outperforms Logistic Regression trained on 528 dimensions**, and ties the classical equivalent MLP on accuracy while surpassing it on F1-Score - suggesting the advantage comes from quantum expressivity via entanglement, not raw computational power.
 
-### Confusion Matrix Highlights
+### Detection Performance — Recall First
 
-- **Synthetic recall: 96%** - the model catches almost all fake images
-- **Real precision: 85%** - conservative bias ideal for anti-fraud systems
+For a synthetic-image detector, **recall on the fake class is the key metric**: it measures how many AI-generated images are actually caught. False negatives (fakes labeled real) are the expensive mistakes, so we optimize and report recall above all.
+
+- 🎯 **Synthetic recall: 96%** - the model catches almost all fake images (only ~4% slip through)
+- **Real precision: 85%** - conservative bias, ideal for anti-fraud screening
 - AUC-ROC of **0.9563** demonstrates robust discrimination across all thresholds
 
 ### t-SNE Analysis
